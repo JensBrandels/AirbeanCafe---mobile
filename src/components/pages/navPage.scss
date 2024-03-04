@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.NavPage-Container {
+  width: 375px;
+  height: 667px;
+  background-color: rgba(47, 41, 38, 1);
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  .NavPage-iconContainer {
+    padding: 1rem;
+
+    img {
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+    }
+  }
+
+  .NavigationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .lineWidth {
+      width: 2.5rem;
+    }
+
+    li {
+      font-family: "PT Serif", serif;
+      font-weight: 700;
+      list-style: none;
+      font-size: 32px;
+      line-height: 38.4px;
+      cursor: pointer;
+    }
+  }
+}

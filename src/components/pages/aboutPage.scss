@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.AboutPage-container {
+  width: 375px;
+  height: 1061px;
+  background-color: rgba(243, 228, 225, 1);
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .AboutPage-topImages {
+    position: relative;
+
+    .positionfix {
+      position: absolute;
+      margin: 1rem;
+    }
+  }
+
+  .AboutPage-text {
+    width: 311px;
+    height: 675px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: rgba(47, 41, 38, 1);
+
+    h1 {
+      font-family: "PT Serif", serif;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 50.4px;
+      padding-top: 1rem;
+    }
+
+    .fixedWeight {
+      font-family: Work Sans;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    p {
+      font-family: Work Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
+      opacity: 80%;
+    }
+  }
+
+  .AboutPage-footerImg {
+    position: absolute;
+    bottom: -5px;
+  }
+}
