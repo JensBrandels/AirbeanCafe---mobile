@@ -2,14 +2,25 @@ import HeaderTop from "../../assets/headertop.svg";
 import BarIcon from "../../assets/Bar-icon.png";
 import BagIcon from "../../assets/bag.svg";
 import FooterImg from "../../assets/footer.svg";
-
+import { useNavigate } from "react-router-dom";
 import "./menuPage.scss";
 
 const MenuPage = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/navpage");
+  };
+
   return (
     <div className="Menu-Container">
       <div className="Menu-imgContainer">
-        <img src={BarIcon} alt="" className="barImg" />
+        <img
+          src={BarIcon}
+          alt=""
+          className="barImg"
+          onClick={handleNavigation}
+        />
         <img src={HeaderTop} alt="" className="HeaderImg" />
 
         <p className="ColorChange">7</p>

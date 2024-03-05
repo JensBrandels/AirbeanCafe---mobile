@@ -39,6 +39,11 @@
       font-size: 32px;
       line-height: 38.4px;
       cursor: pointer;
+
+      .linkStyle {
+        text-decoration: none;
+        color: inherit;
+      }
     }
   }
 }

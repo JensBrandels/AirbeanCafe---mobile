@@ -2,13 +2,24 @@ import HeaderTop from "../../assets/headertop.svg";
 import BarIcon from "../../assets/Bar-icon.png";
 import OwnerImg from "../../assets/Owner-img.png";
 import FooterImg from "../../assets/footer.svg";
+import { useNavigate } from "react-router-dom";
 import "./aboutPage.scss";
 
 const AboutPage = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/navpage");
+  };
   return (
     <div className="AboutPage-container">
       <div className="AboutPage-topImages">
-        <img src={BarIcon} alt="" className="positionfix" />
+        <img
+          src={BarIcon}
+          alt=""
+          className="positionfix"
+          onClick={handleNavigation}
+        />
         <img src={HeaderTop} alt="" />
       </div>
       <article className="AboutPage-text">
