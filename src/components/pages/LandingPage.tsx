@@ -1,9 +1,8 @@
 import Headerleft from "../../assets/headerleft.svg";
 import MainLogo from "../../assets/mainLogo.png";
 import Headerright from "../../assets/headerright.svg";
-import "./landingPage.scss";
 import { useNavigate } from "react-router-dom";
-useNavigate;
+import "./landingPage.scss";
 
 const LandingPage = () => {
   let navigate = useNavigate();

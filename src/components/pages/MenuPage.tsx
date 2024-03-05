@@ -3,7 +3,10 @@ import BarIcon from "../../assets/Bar-icon.png";
 import BagIcon from "../../assets/bag.svg";
 import FooterImg from "../../assets/footer.svg";
 import { useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
 import "./menuPage.scss";
+
+import Menu from "../menu/Menu.tsx";
 
 const MenuPage = () => {
   const navigate = useNavigate();
@@ -31,7 +34,9 @@ const MenuPage = () => {
       <div>
         <h2 className="Menu-Title">Meny</h2>
       </div>
-      <div>Put content here</div>
+      <ul>
+        <Menu />
+      </ul>
       <div className="Menu-footerImg">
         <img src={FooterImg} alt="" />
       </div>
