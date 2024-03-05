@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import AddButton from "../../assets/add.png";
+
+import "./menu.scss";
 
 type menuItem = {
   desc: string;
@@ -30,19 +33,21 @@ const menu = () => {
   const displayMenu = () => {
     return menuData.map((menuItem) => {
       return (
-        <li key={menuItem.id}>
+        <li key={menuItem.id} className="deleteDots">
           <div className="menuData-Container">
-            <img src="LÄGG TILL ICON" alt="" />
+            <img src={AddButton} alt="" className="buttonPosition" />
             <div>
-              <h3>{menuItem.title}</h3>
+              <h3 className="menuData-titleAndPrice">{menuItem.title}</h3>
+              <p className="menuData-pTags">{menuItem.desc}</p>
             </div>
+            <p className="menuData-titleAndPrice">{menuItem.price} kr</p>
           </div>
         </li>
       );
     });
   };
 
-  return <div>{displayMenu()}</div>;
+  return <div className="menuData">{displayMenu()}</div>;
 };
 
 export default menu;

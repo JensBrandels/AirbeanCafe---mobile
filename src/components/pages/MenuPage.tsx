@@ -34,7 +34,7 @@ const MenuPage = () => {
       <div>
         <h2 className="Menu-Title">Meny</h2>
       </div>
-      <ul>
+      <ul className="Menu-ListSpaces">
         <Menu />
       </ul>
       <div className="Menu-footerImg">
