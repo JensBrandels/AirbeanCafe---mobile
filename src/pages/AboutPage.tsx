@@ -1,7 +1,7 @@
-import HeaderTop from "../../assets/headertop.svg";
-import BarIcon from "../../assets/Bar-icon.png";
-import OwnerImg from "../../assets/Owner-img.png";
-import FooterImg from "../../assets/footer.svg";
+import HeaderTop from "../assets/headertop.svg";
+import BarIcon from "../assets/Bar-icon.png";
+import OwnerImg from "../assets/Owner-img.png";
+import FooterImg from "../assets/footer.svg";
 import { useNavigate } from "react-router-dom";
 import "./aboutPage.scss";
 

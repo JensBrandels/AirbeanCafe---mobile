@@ -1,6 +1,6 @@
-import Headerleft from "../../assets/headerleft.svg";
-import MainLogo from "../../assets/mainLogo.png";
-import Headerright from "../../assets/headerright.svg";
+import Headerleft from "../assets/headerleft.svg";
+import MainLogo from "../assets/mainLogo.png";
+import Headerright from "../assets/headerright.svg";
 import { useNavigate } from "react-router-dom";
 import "./landingPage.scss";
 

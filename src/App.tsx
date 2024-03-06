@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import LandingPage from "./components/pages/LandingPage";
-import NavPage from "./components/pages/NavPage";
-import AboutPage from "./components/pages/AboutPage";
-import MenuPage from "./components/pages/MenuPage";
+import LandingPage from "./pages/LandingPage";
+import NavPage from "./pages/NavPage";
+import AboutPage from "./pages/AboutPage";
+import MenuPage from "./pages/MenuPage";
 import "./App.css";
-import StatusPage from "./components/pages/StatusPage";
+import StatusPage from "./pages/StatusPage";
 
 function App() {
   return (

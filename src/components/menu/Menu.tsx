@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import AddButton from "../../assets/add.png";
+import { useCartStore } from "../../store/CartStore";
 
 import "./menu.scss";
 
@@ -13,6 +14,8 @@ type menuItem = {
 const menu = () => {
   const [menuData, setMenuData] = useState<menuItem[]>([]);
 
+  const { addToCart } = useCartStore();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,9 +23,8 @@ const menu = () => {
           "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/"
         );
         const data = await response.json();
-        const SixItemsFromData = data.menu.slice(0, 6);
-        setMenuData(SixItemsFromData);
-        console.log(SixItemsFromData);
+        setMenuData(data.menu);
+        console.log(data.menu);
       } catch (error) {
         console.log("Failed to fetch data :/", error);
       }
@@ -35,12 +37,23 @@ const menu = () => {
       return (
         <li key={menuItem.id} className="deleteDots">
           <div className="menuData-Container">
-            <img src={AddButton} alt="" className="buttonPosition" />
-            <div>
-              <h3 className="menuData-titleAndPrice">{menuItem.title}</h3>
+            <button
+              onClick={() => addToCart(menuItem.title, menuItem.price)}
+              className="menuData-button"
+            >
+              <img src={AddButton} />
+            </button>
+            <div className="menuData-textContainer">
+              <h3 className="menuData-title">
+                <span className="menuData-titleName">{menuItem.title}</span>
+                <span className="dots">
+                  ...............................................
+                </span>
+                <p className="menuItem-price">{menuItem.price} kr</p>
+              </h3>
+
               <p className="menuData-pTags">{menuItem.desc}</p>
             </div>
-            <p className="menuData-titleAndPrice">{menuItem.price} kr</p>
           </div>
         </li>
       );

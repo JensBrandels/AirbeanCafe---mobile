@@ -1,4 +1,4 @@
-import NavIcon from "../../assets/NavIcon.png";
+import NavIcon from "../assets/NavIcon.png";
 import { Link, useNavigate } from "react-router-dom";
 import "./navPage.scss";
 
