@@ -11,6 +11,8 @@ interface CartStore {
   order: OrderModel[];
   totalItems: number;
   totalPrice: number;
+  orderNumber: string;
+  setOrderNumber: (orderNumber: string) => void;
   addToCart: (name: string, price: number) => void;
   deleteFromCart: (name: string) => void;
 }
@@ -21,6 +23,13 @@ export const useCartStore = create<CartStore>()(
       order: [],
       totalItems: 0,
       totalPrice: 0,
+      orderNumber: "",
+
+      setOrderNumber: (orderNumber) =>
+        set({
+          orderNumber,
+        }),
+
       addToCart: (name, price) =>
         set((state) => {
           const totalPrice = state.totalPrice + price;

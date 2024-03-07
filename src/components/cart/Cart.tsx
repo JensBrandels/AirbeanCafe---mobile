@@ -2,9 +2,28 @@ import "./cart.scss";
 import ArrowDown from "../../assets/VectorUp.svg";
 import ArrowUp from "../../assets/VectorDown.svg";
 import { useCartStore } from "../../store/CartStore";
+import { submitOrder } from "../../api/apiFetches";
+import { NewOrderRequest } from "../../api/types/NewOrderRequest";
 
 const Cart = () => {
-  const { totalPrice, order, addToCart, deleteFromCart } = useCartStore();
+  const { totalPrice, order, addToCart, deleteFromCart, setOrderNumber } =
+    useCartStore();
+
+  const handleClick = async () => {
+    const requestBody = {
+      details: {
+        order: order.flatMap((item) =>
+          Array.from({ length: item.quantity }, () => ({
+            name: item.name,
+            price: item.price,
+          }))
+        ),
+      },
+    };
+    console.log("requestbody", requestBody);
+    const newOrderNumber = await submitOrder(requestBody as NewOrderRequest);
+    setOrderNumber(newOrderNumber);
+  };
 
   return (
     <div className="Cart-Container">
@@ -29,7 +48,7 @@ const Cart = () => {
         <p>Total</p>
         <p>{totalPrice}</p>
       </div>
-      <button>Take my money!</button>
+      <button onClick={() => handleClick()}>Take my money!</button>
     </div>
   );
 };

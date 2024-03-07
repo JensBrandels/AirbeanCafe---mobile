@@ -29,13 +29,13 @@ const NavPage = () => {
           </li>
           <hr className="lineWidth" />
           <li>
-            <Link to="/profile" className="linkStyle">
+            <Link to="/profilepage" className="linkStyle">
               Min Profil
             </Link>
           </li>
           <hr className="lineWidth" />
           <li>
-            <Link to="/orderstatus" className="linkStyle">
+            <Link to="/statuspage" className="linkStyle">
               Orderstatus
             </Link>
           </li>
