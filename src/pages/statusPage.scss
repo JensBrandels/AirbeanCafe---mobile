@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.statusPage-container {
+  width: 375px;
+  height: 667px;
+  background-color: rgba(229, 103, 78, 1);
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .statusPage-text {
+    font-family: Work Sans;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .statusPage-title {
+    font-family: PT Serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 279px;
+  }
+
+  .statusPage-button {
+    font-family: PT Serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(47, 41, 38, 1);
+    background-color: rgba(255, 255, 255, 1);
+    width: 184px;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+  }
+}
