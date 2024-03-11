@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(243, 228, 225, 1);
+  width: 341px;
+  min-height: 565.77px;
+  border-radius: 3px;
+  gap: 2rem;
+  position: absolute;
+  top: 8rem;
+
+  .login-Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    .login-HeadImg {
+      width: 30px;
+      height: 30px;
+    }
+    .login-title {
+      font-family: PT Serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 38px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: rgba(47, 41, 38, 1);
+      padding-bottom: 1rem;
+    }
+
+    .login-text {
+      font-family: Work Sans;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: rgba(47, 41, 38, 1);
+    }
+  }
+}
+
+.login-formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  gap: 1rem;
+
+  input {
+    width: 310px;
+    color: rgba(47, 41, 38, 1);
+    background-color: rgba(243, 228, 225, 1);
+    border-radius: 6px;
+    border: 1px black solid;
+    height: 48px;
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    padding-left: 1rem;
+  }
+  label {
+    color: rgba(47, 41, 38, 1);
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkbox-container input {
+    display: none;
+  }
+
+  .checkbox-container .checkmark {
+    height: 26px;
+    width: 26px;
+    border: 1px solid #000;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 1rem;
+  }
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    box-shadow: 0 0 0 3px #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.login-button {
+  width: 248px;
+  height: 55px;
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 1);
+  font-family: PT Serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  background-color: rgba(47, 41, 38, 1);
+}

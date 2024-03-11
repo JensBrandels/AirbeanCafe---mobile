@@ -5,12 +5,15 @@ import { useState } from "react";
 
 import "./profilePage.scss";
 import NavPage from "./NavPage";
+import Login from "../components/form/Login";
 
 const ProfilePage = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const [loginModal, setLoginModal] = useState(true);
   const handleClick = () => {
     setIsOverlayVisible(true);
   };
+
   return (
     <div className="profilePage-container">
       <header>
@@ -77,6 +80,7 @@ const ProfilePage = () => {
       {isOverlayVisible && (
         <NavPage closeNav={() => setIsOverlayVisible(false)} />
       )}
+      {loginModal && <Login closeOverlay={() => setLoginModal(false)} />}
     </div>
   );
 };
