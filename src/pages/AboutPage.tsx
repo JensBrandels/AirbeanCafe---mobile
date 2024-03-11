@@ -2,15 +2,16 @@ import HeaderTop from "../assets/headertop.svg";
 import BarIcon from "../assets/Bar-icon.png";
 import OwnerImg from "../assets/Owner-img.png";
 import FooterImg from "../assets/footer.svg";
-import { useNavigate } from "react-router-dom";
 import "./aboutPage.scss";
+import NavPage from "./NavPage";
+import { useState } from "react";
 
 const AboutPage = () => {
-  const navigate = useNavigate();
-
-  const handleNavigation = () => {
-    navigate("/navpage");
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const handleClick = () => {
+    setIsOverlayVisible(true);
   };
+
   return (
     <div className="AboutPage-container">
       <div className="AboutPage-topImages">
@@ -18,7 +19,7 @@ const AboutPage = () => {
           src={BarIcon}
           alt=""
           className="positionfix"
-          onClick={handleNavigation}
+          onClick={() => handleClick()}
         />
         <img src={HeaderTop} alt="" />
       </div>
@@ -56,6 +57,9 @@ const AboutPage = () => {
       <div className="AboutPage-footerImg">
         <img src={FooterImg} alt="" />
       </div>
+      {isOverlayVisible && (
+        <NavPage closeNav={() => setIsOverlayVisible(false)} />
+      )}
     </div>
   );
 };

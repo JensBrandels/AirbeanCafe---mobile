@@ -11,6 +11,11 @@
   flex-direction: column;
   gap: 10rem;
 
+  position: absolute;
+  top: 0;
+  left: 3.5rem;
+  z-index: 9999;
+
   .NavPage-iconContainer {
     padding: 1rem;
 

@@ -1,18 +1,23 @@
 import NavIcon from "../assets/NavIcon.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navPage.scss";
+import { createPortal } from "react-dom";
 
-const NavPage = () => {
-  const navigation = useNavigate();
+interface navPageProps {
+  closeNav: () => void;
+}
 
-  const handleNavigation = () => {
-    navigation("/");
+const NavPage = ({ closeNav }: navPageProps) => {
+  let overlayRoot = document.getElementById("overlay-root");
+
+  const handleClick = () => {
+    closeNav();
   };
 
-  return (
+  return createPortal(
     <div className="NavPage-Container">
       <div className="NavPage-iconContainer">
-        <img src={NavIcon} alt="" onClick={handleNavigation} />
+        <img src={NavIcon} alt="" onClick={() => handleClick()} />
       </div>
       <div>
         <ul className="NavigationContainer">
@@ -41,7 +46,8 @@ const NavPage = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </div>,
+    overlayRoot as Element
   );
 };
 
