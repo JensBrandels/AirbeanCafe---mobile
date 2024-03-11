@@ -3,10 +3,16 @@ import { useCartStore } from "../store/CartStore";
 import { useEffect, useState } from "react";
 import DroneImg from "../assets/droneImg.svg";
 import "./statusPage.scss";
+import { useNavigate } from "react-router-dom";
 
 const StatusPage = () => {
   const { orderNumber } = useCartStore();
   const [eta, setEta] = useState(0);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/menupage");
+  };
 
   useEffect(() => {
     const getCurrentOrderEta = async () => {
@@ -30,7 +36,9 @@ const StatusPage = () => {
           <span className="fatFont">{eta}</span> minuter
         </p>
       </div>
-      <button className="statusPage-button">Ok, cool!</button>
+      <button onClick={() => handleClick()} className="statusPage-button">
+        Ok, cool!
+      </button>
     </div>
   );
 };
