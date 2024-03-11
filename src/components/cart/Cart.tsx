@@ -27,28 +27,47 @@ const Cart = () => {
 
   return (
     <div className="Cart-Container">
+      <h3 className="cart-title">Din beställning</h3>
       {order.map((item) => (
-        <div key={item.name}>
-          <div>
-            <div>{item.name}</div>
-            <p>{item.price * item.quantity} kr</p>
-          </div>
-          <div>
-            <button onClick={() => addToCart(item.name, item.price)}>
-              <img src={ArrowUp} />
-            </button>
-            <p>{item.quantity}</p>
-            <button onClick={() => deleteFromCart(item.name)}>
-              <img src={ArrowDown} alt="" />
-            </button>
+        <div className="cart-itemContainer" key={item.name}>
+          <div className="cart-items">
+            <p className="cart-itemName">{item.name}</p>
+
+            <span className="dots">
+              ...........................................................................
+            </span>
+
+            <div className="cart-buttons">
+              <button onClick={() => addToCart(item.name, item.price)}>
+                <img src={ArrowUp} />
+              </button>
+              <p className="cart-quantity">{item.quantity}</p>
+              <button onClick={() => deleteFromCart(item.name)}>
+                <img src={ArrowDown} alt="" />
+              </button>
+            </div>
+            <p className="cart-itemPrice">{item.price * item.quantity} kr</p>
           </div>
         </div>
       ))}
-      <div>
-        <p>Total</p>
-        <p>{totalPrice}</p>
+
+      <div className="cart-totalPriceContainer">
+        <div className="cart-textContainer">
+          <p className="cart-totalPriceTitle">
+            Total
+            <span className="dots2">
+              .....................................................
+            </span>
+          </p>
+
+          <p className="cart-droneDelivery">inkl moms + drönarleverans</p>
+        </div>
+        <p className="cart-totalPrice">{totalPrice} kr</p>
       </div>
-      <button onClick={() => handleClick()}>Take my money!</button>
+
+      <button className="cart-orderButton" onClick={() => handleClick()}>
+        Take my money!
+      </button>
     </div>
   );
 };

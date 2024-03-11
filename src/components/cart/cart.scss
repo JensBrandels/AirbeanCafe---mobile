@@ -1,8 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 .Cart-Container {
   position: absolute;
   background-color: white;
   border-radius: 3px;
-  top: 4.5rem;
+  top: 5rem;
   width: 341px;
-  height: 575.06px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  gap: 0.6rem;
+
+  .cart-itemContainer {
+    width: 319px;
+    height: 50px;
+  }
+  .cart-title {
+    font-family: PT Serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    padding: 1rem;
+  }
+  .cart-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .cart-itemName {
+      font-size: 20px;
+      font-family: PT Serif;
+      font-weight: 700;
+      line-height: 24px;
+      flex-shrink: 0;
+    }
+    .dots {
+      overflow: hidden;
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    .cart-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 1rem;
+
+      .cart-quantity {
+        font-family: Work Sans;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+        margin-top: 0.8rem;
+      }
+    }
+
+    .cart-buttons button {
+      border: none;
+      height: 0.5rem;
+      width: 0.5rem;
+      background-color: white;
+    }
+  }
+}
+
+.cart-itemPrice {
+  position: absolute;
+  margin-top: 3rem;
+  font-family: Work Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  left: 0px;
+}
+
+.cart-totalPriceContainer {
+  display: grid;
+  grid-template-columns: 220px 100px;
+  padding: 1rem;
+
+  .cart-totalPriceTitle {
+    font-family: PT Serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 28px;
+    overflow: hidden;
+    text-wrap: nowrap;
+  }
+}
+
+.cart-totalPrice {
+  font-family: PT Serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  padding-left: 1rem;
+}
+
+.cart-droneDelivery {
+  font-family: Work Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+}
+
+.cart-orderButton {
+  width: 248px;
+  height: 55px;
+  top: 542px;
+  left: 64px;
+  border-radius: 50px;
+  font-family: PT Serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 1rem;
+  border: none;
+}
+
+.dots2 {
+  margin-top: 4px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.Cart-Container::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  top: -2px;
+  right: 5px;
+  width: 20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  transform: rotate(45deg);
 }
