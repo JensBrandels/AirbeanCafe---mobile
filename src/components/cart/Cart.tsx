@@ -4,10 +4,19 @@ import ArrowUp from "../../assets/VectorDown.svg";
 import { useCartStore } from "../../store/CartStore";
 import { submitOrder } from "../../api/apiFetches";
 import { NewOrderRequest } from "../../api/types/NewOrderRequest";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { totalPrice, order, addToCart, deleteFromCart, setOrderNumber } =
-    useCartStore();
+  const {
+    totalPrice,
+    order,
+    addToCart,
+    deleteFromCart,
+    setOrderNumber,
+    resetCart,
+  } = useCartStore();
+
+  const navigate = useNavigate();
 
   const handleClick = async () => {
     const requestBody = {
@@ -23,6 +32,8 @@ const Cart = () => {
     console.log("requestbody", requestBody);
     const newOrderNumber = await submitOrder(requestBody as NewOrderRequest);
     setOrderNumber(newOrderNumber);
+    navigate("/statuspage");
+    resetCart();
   };
 
   return (
@@ -65,7 +76,11 @@ const Cart = () => {
         <p className="cart-totalPrice">{totalPrice} kr</p>
       </div>
 
-      <button className="cart-orderButton" onClick={() => handleClick()}>
+      <button
+        className="cart-orderButton"
+        onClick={() => handleClick()}
+        disabled={order.length === 0}
+      >
         Take my money!
       </button>
     </div>
