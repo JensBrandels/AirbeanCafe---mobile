@@ -12,6 +12,7 @@ import Cart from "../components/cart/Cart.tsx";
 
 const MenuPage = () => {
   const [showNav, setShowNav] = useState(false);
+
   const handleClick = () => {
     setShowNav(true);
   };

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.profilePage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 375px;
+  height: 667px;
+  background-color: rgba(47, 41, 38, 1);
+  margin: 0 auto;
+  margin-top: 3rem;
+  header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .profile-navigationBar {
+      position: absolute;
+      margin: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  .profile-titlestyling {
+    font-family: PT Serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    p {
+      font-family: Work Sans;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.568);
+    }
+  }
+
+  .profile-infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    gap: 3rem;
+    .profile-imgTitle {
+      width: 94px;
+      height: 94px;
+    }
+
+    .profile-flexContainer {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+
+      h4 {
+        font-family: PT Serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-bottom: 1rem;
+      }
+
+      .profile-historikContainer {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        padding-top: 0.2rem;
+      }
+    }
+  }
+}
+
+.profile-textBig {
+  font-family: Work Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+.profile-fatText {
+  font-family: Work Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+.profile-text {
+  font-family: Work Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.profile-totalSpent {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-top: -1rem;
+}
